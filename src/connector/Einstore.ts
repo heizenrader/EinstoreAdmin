@@ -437,7 +437,7 @@ export class Einstore {
 	}
 
 	public downloadCurrentPlatform = async (id: string, platform: string) => {
-		const win = window.open('/downloading', 'download') as any
+		const win = window.open('/downloading', '_self') as any
 		return this.download(id)
 			.then((result: any) => {
 				const isIos = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream

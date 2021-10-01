@@ -26,9 +26,6 @@ export default function InstallButton({
 	view?: InstallButtonView
 	faded?: boolean
 }) {
-	const androidInstall = build.platform === 'android'
-	const iosInstall = build.platform === 'ios'
-
 	view = view || InstallButtonView.DEFAULT
 
 	return (

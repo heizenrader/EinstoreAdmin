@@ -437,15 +437,23 @@ export class Einstore {
 	}
 
 	public downloadCurrentPlatform = async (id: string, platform: string) => {
-// 		const win = window.open('/downloading', 'download') as any
 		return this.download(id)
 			.then((result: any) => {
-				const isIos = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream
-				if (platform === 'ios' && isIos) {
+				if (platform === 'ios') {
 					window.location.href = result.ios
 				} else {
 					window.location.href = result.file
 				}
+			})
+			.catch((error) => {
+				console.log(error)
+			})
+	}
+
+	public downloadFile = async (id: string, platform: string) => {
+		return this.download(id)
+			.then((result: any) => {
+				window.location.href = result.file
 			})
 			.catch((error) => {
 				console.log(error)

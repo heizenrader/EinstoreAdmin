@@ -1,7 +1,7 @@
 import React from 'react'
 import Button from './button'
 import IconMobile from '../shapes/mobile'
-import IconDownload from '../shapes/download'
+// import IconDownload from '../shapes/download'
 import { App } from '../connector/Model/App'
 import cn from 'classnames'
 

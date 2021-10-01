@@ -4,11 +4,6 @@ import IconDownload from '../shapes/download'
 import { App } from '../connector/Model/App'
 import cn from 'classnames'
 
-export enum DownloadButtonView {
-	DEFAULT = 'default',
-	MINI = 'mini',
-}
-
 const downloadBuild = (build: App) => (e: React.MouseEvent<HTMLDivElement>) => {
 	e.preventDefault()
 	if (build.id && build.platform) {
@@ -16,23 +11,16 @@ const downloadBuild = (build: App) => (e: React.MouseEvent<HTMLDivElement>) => {
 	}
 }
 
-export default function DownloadButton({
-																				 build,
-																				 view,
-																				 faded,
-																			 }: {
+export default function DownloadButton({build,}: {
 	build: App
-	view?: DownloadButtonView
-	faded?: boolean
 }) {
 	return (
 		<>
 			<Button
-				inactive={view === DownloadButtonView.MINI && faded}
-				className={cn('card-column-download', faded && 'faded')}
+				className={cn('card-column-download')}
 				onClick={downloadBuild(build)}
 			>
-				<IconDownload /> {view === DownloadButtonView.DEFAULT && <span>Download</span>}
+				<IconDownload /> <span>Download</span>
 			</Button>
 		</>
 	)

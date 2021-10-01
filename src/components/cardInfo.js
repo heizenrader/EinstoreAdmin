@@ -141,7 +141,7 @@ export default class CardInfo extends Component {
 							</div>
 						</div>
 						<div className="card-column-infobox-item">
-							<div className="card-column-infobox-item-name">Download:</div>
+							<div className="card-column-infobox-item-name">Archive:</div>
 							<div className="card-column-infobox-item-value">
 								<DownloadButton build={{ id: this.props.uuid, platform: this.props.platform }} />
 							</div>

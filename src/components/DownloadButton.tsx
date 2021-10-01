@@ -5,7 +5,7 @@ import IconDownload from '../shapes/download'
 import { App } from '../connector/Model/App'
 import cn from 'classnames'
 
-export enum InstallButtonView {
+export enum DownloadButtonView {
 	DEFAULT = 'default',
 	MINI = 'mini',
 }
@@ -17,28 +17,23 @@ const downloadBuild = (build: App) => (e: React.MouseEvent<HTMLDivElement>) => {
 	}
 }
 
-export default function InstallButton({
-	build,
-	view,
-	faded,
-}: {
+export default function DownloadButton({
+																				 build,
+																				 view,
+																				 faded,
+																			 }: {
 	build: App
-	view?: InstallButtonView
+	view?: DownloadButtonView
 	faded?: boolean
 }) {
-	const androidInstall = build.platform === 'android'
-	const iosInstall = build.platform === 'ios'
-
-	view = view || InstallButtonView.DEFAULT
-
 	return (
 		<>
 			<Button
-				inactive={view === InstallButtonView.MINI && faded}
+				inactive={view === DownloadButtonView.MINI && faded}
 				className={cn('card-column-download', faded && 'faded')}
 				onClick={downloadBuild(build)}
 			>
-				<IconMobile /> {view === InstallButtonView.DEFAULT && <span>Install</span>}
+				<IconDownload /> {view === DownloadButtonView.DEFAULT && <span>Download</span>}
 			</Button>
 		</>
 	)

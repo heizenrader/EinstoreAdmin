@@ -7,6 +7,7 @@ import AppIcon from './AppIcon'
 
 import bytes from 'pretty-bytes'
 
+import DownloadButton from './DownloadButton'
 import InstallButton from './InstallButton'
 import prettyDate from "../utils/prettyDate";
 
